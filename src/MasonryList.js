@@ -76,6 +76,10 @@ export type Props = {
    * sure to also set the `refreshing` prop correctly.
    */
   onRefresh?: ?Function,
+  /**
+   * Properties to pass to refresh control.
+   */
+  refreshProps?: any,
 };
 type State = {
   columns: Array<Column>,
@@ -107,6 +111,7 @@ export default class MasonryList extends React.Component<Props, State> {
               <RefreshControl
                 refreshing={props.refreshing}
                 onRefresh={props.onRefresh}
+                {...props.refreshProps}
               />
             }
           />
